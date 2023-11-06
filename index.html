@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Online</title>
+    <style>
+       /* Estilos gerais para o formulário */
+form {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #dfdfdf;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+/* Estilo para rótulos dos campos */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo para campos de entrada de texto e área de texto */
+.input-padrao {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo para o botão de envio */
+.enviar {
+    background-color: #52d108e7;
+    color: #000000;
+    padding: 15px 155px;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.enviar:hover {
+    background-color: rgb(146, 255, 73);
+}
+
+/* Estilo para o checkbox */
+.checkbox {
+    display: block;
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+/* Estilo para o campo de seleção */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo para os radio buttons */
+input[type="radio"] {
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* Estilos para o rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Outros estilos específicos, se necessário */
+
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <footer>
+            <img src="logo.png" alt="Logo." width="100">
+        </footer>
+    </header>
+
+    <main>
+        <form action="/enviar-email" method="post"> <!-- Adicionado o formulário com ação e método POST -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" class="input-padrao" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" class="input-padrao" required placeholder="deivisonimob@gmail.com">
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx">
+
+            <label for="mensagem">Se você procura alguma informação específica, aproveite o campo abaixo para enviar sua mensagem:</label>
+            <textarea cols="20" rows="5" id="mensagem" class="input-padrao"></textarea>
+
+            <fieldset>
+                <p>Como prefere o nosso contato?</p>
+                <label for="radio-email"><input type="radio" name="contato" value="e-mail" id="radio-email">E-mail</label>
+                <label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone">Telefone</label>
+                <label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp" id="radio-whatsapp" checked>Whatsapp</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Qual horário prefere ser atendido?</legend>
+                <select name="horario"> <!-- Adicionado o campo de seleção com o atributo "name" definido como "horario" -->
+                    <option>Manhã</option>
+                    <option>Tarde</option>
+                    <option>Noite</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Enviar" class="enviar">
+        </form>  
+    </main>
+    
+    <footer>
+        <img src="logo.png" alt="Logo." width="100">
+        <p class="copyright">&copy; Copyright DEIVISON - 2023</p>
+    </footer>
+</body>
+</html>
